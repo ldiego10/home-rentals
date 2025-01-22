@@ -90,7 +90,7 @@ export default function DetallesPropiedad({ params }) {
 
   const obtenerClima = async (lat, lon) => {
     try {
-      const apiKey = '4c917fc5efa54440ace202441252201'; 
+      const apiKey = process.env.NEXT_PUBLIC_WEATHERAPI_KEY;
       const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&lang=es&aqi=no`;
 
       const response = await fetch(url);
